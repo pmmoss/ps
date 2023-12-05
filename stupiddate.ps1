@@ -1,5 +1,19 @@
-$ScheduledTime = "3-23"
+/*
+# Get the current UTC time
+$utcTime = Get-Date -Utc
 
+# Convert the UTC time to CDT
+$cdtTime = $utcTime.ToLocalTime('Central Standard Time')
+
+# Check if the time is between 05:00 and 18:00 CDT
+if ($cdtTime.Hour -ge 5 -and $cdtTime.Hour -lt 18) {
+    # Stop the server
+    Stop-Computer
+} else {
+    # Start the server
+    Start-Computer
+}
+*/
 #Get Current UTC Time (default time zone in all Azure regions)
 $UTCNow = [System.DateTime]::UtcNow
 
